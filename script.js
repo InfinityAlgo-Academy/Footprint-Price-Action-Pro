@@ -1,36 +1,28 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const menuToggle = document.getElementById('menu-toggle');
-    const closeMenu = document.getElementById('close-menu');
-    const mobileNav = document.getElementById('mobile-nav');
-    const mobileOverlay = document.getElementById('mobile-overlay');
+    const navToggle = document.getElementById('navToggle');
+    const navMenu = document.getElementById('navMenu');
 
-    function openMenu() {
-        mobileNav.classList.add('active');
-        mobileOverlay.classList.add('active');
-        document.body.style.overflow = 'hidden'; // Prevent scrolling
+    if (navToggle && navMenu) {
+        navToggle.addEventListener('click', () => {
+            navToggle.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Close menu when clicking a link
+        const navLinks = navMenu.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navToggle.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!navToggle.contains(e.target) && !navMenu.contains(e.target)) {
+                navToggle.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
+        });
     }
-
-    function closeMenuFunc() {
-        mobileNav.classList.remove('active');
-        mobileOverlay.classList.remove('active');
-        document.body.style.overflow = ''; // Restore scrolling
-    }
-
-    if (menuToggle) {
-        menuToggle.addEventListener('click', openMenu);
-    }
-
-    if (closeMenu) {
-        closeMenu.addEventListener('click', closeMenuFunc);
-    }
-
-    if (mobileOverlay) {
-        mobileOverlay.addEventListener('click', closeMenuFunc);
-    }
-
-    // Close menu when clicking a link inside mobile nav
-    const mobileLinks = mobileNav.querySelectorAll('a');
-    mobileLinks.forEach(link => {
-        link.addEventListener('click', closeMenuFunc);
-    });
 });
