@@ -1,0 +1,1 @@
+# ACD-Indicator-for-MetaTrader-5
