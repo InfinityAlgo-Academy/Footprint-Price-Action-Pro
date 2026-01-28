@@ -65,26 +65,49 @@
 <body>
 
     <!-- Header -->
-    <header>
-        <div class="nav-container">
-            <div class="nav-wrapper">
-                <div class="logo">InfinityAlgo</div>
-                <div class="menu-toggle" id="mobile-menu">
-                    <i class="fas fa-bars"></i>
-                </div>
-                <nav class="nav-links">
-                    <a href="index.html">الرئيسية</a>
-                    <a href="index.html#features">المميزات</a>
-                    <a href="index.html#guide">الدليل</a>
-                    <a href="about.html" class="active" style="color: var(--primary);">من نحن</a>
-                    <a href="https://infinityalgoacademy.net/" class="btn-primary mobile-only" target="_blank">
-                        <i class="fas fa-external-link-alt"></i> زيارة المتجر
-                    </a>
-                </nav>
-                <a href="https://infinityalgoacademy.net/" class="btn-primary desktop-only" target="_blank">
+    <header class="site-header">
+        <div class="main-container header-inner">
+            <!-- Logo -->
+            <a href="index.html" class="logo">InfinityAlgo</a>
+
+            <!-- Desktop Navigation -->
+            <nav class="desktop-nav">
+                <a href="index.html">الرئيسية</a>
+                <a href="index.html#features">المميزات</a>
+                <a href="index.html#guide">الدليل</a>
+                <a href="about.html" class="active">من نحن</a>
+            </nav>
+
+            <!-- Header Actions -->
+            <div class="header-actions">
+                <a href="https://infinityalgoacademy.net/" class="btn-primary desktop-cta" target="_blank">
                     <i class="fas fa-external-link-alt"></i> زيارة المتجر
                 </a>
+                <div class="menu-toggle" id="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
             </div>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div class="mobile-overlay" id="mobile-overlay"></div>
+
+        <!-- Mobile Navigation Drawer -->
+        <div class="mobile-nav" id="mobile-nav">
+            <div class="mobile-nav-header">
+                <span class="logo">القائمة</span>
+                <div class="close-menu" id="close-menu">
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
+            <a href="index.html">الرئيسية</a>
+            <a href="index.html#features">المميزات</a>
+            <a href="index.html#guide">الدليل</a>
+            <a href="about.html" class="active">من نحن</a>
+            <a href="https://infinityalgoacademy.net/" class="btn-primary" target="_blank"
+                style="text-align: center; margin-top: 1rem;">
+                <i class="fas fa-external-link-alt"></i> زيارة المتجر
+            </a>
         </div>
     </header>
 
